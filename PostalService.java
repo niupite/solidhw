@@ -6,16 +6,18 @@ class PostalService {
 
     void SendPackage(String addresseeName,
                      String addresseeSurname,
+                     String addresseeID,
                      String senderName,
                      String senderSurname,
+                     String senderID,
                      String postalCode,
                      String country,
                      String city,
                      String streetName,
                      Integer streetNumber) {
 
-        Addressee addressee = new Addressee(addresseeName, addresseeSurname);
-        Person sender = new Person(senderName, senderSurname);
+        Addressee addressee = new Addressee(addresseeName, addresseeSurname, addresseeID);
+        Person sender = new Person(senderName, senderSurname, senderID);
 
         personValidator.validator(addressee);
         personValidator.validator(sender);
@@ -23,7 +25,7 @@ class PostalService {
         Address address = new Address(postalCode, country, city, streetName, streetNumber);
         addressValidator.validator(address);
 
-        (addressee).send(new Package(sender, address));
+        addressee.send(new Package(sender, address));
 
     }
 
