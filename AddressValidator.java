@@ -4,9 +4,12 @@ import java.util.regex.Pattern;
 
 import static org.apache.logging.log4j.util.Strings.isBlank;
 
-class AddressValidator {
+class AddressValidator extends ObjectValidator {
 
-    void validator(Address address) {
+    @Override
+    void validator(Object o) {
+        super.validator(o);
+        Address address = (Address) o;
         if (isBlank(address.getPostalCode())
                 || isBlank(address.getCountry())
                 || isBlank(address.getCity())
@@ -17,7 +20,7 @@ class AddressValidator {
                 || Pattern.compile("[0-9]").matcher(address.getCountry()).find()
                 || Pattern.compile("[0-9]").matcher(address.getCity()).find()
                 || Pattern.compile("[0-9]").matcher(address.getStreetName()).find()) {
-            throw new IllegalArgumentException("Address is not valid");
+            throw new IllegalArgumentException("Input not valid");
         }
     }
 
