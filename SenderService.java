@@ -1,6 +1,6 @@
 package io.codelex.solidexamples;
 
-public class PackageSender {
+public class SenderService {
 
     public static void main(String[] args) {
 
@@ -9,8 +9,18 @@ public class PackageSender {
                 "Janis", "Liepins", "200196-77299",
                 "Marta", "Ozola", "121277-11223",
                 "LV-1010", "Latvia", "Riga", "Brivibas", 100);
-        
+
+        postalService.SendLetter(
+                "Janis", "Liepins", "200196-77299",
+                "Marta", "Ozola", "121277-11223",
+                "LV-1010", "Latvia", "Riga", "Brivibas", 100);
+
         postalService.SendPackage(
+                "Gatis", "Kandis", "aaa912-7299",
+                "Jan88", "Berzins", "33219-7 3932",
+                "LV", "Lat33", "Jelgava", "At9020", null);
+        
+        postalService.SendLetter(
                 "Gatis", "Kandis", "aaa912-7299",
                 "Jan88", "Berzins", "33219-7 3932",
                 "LV", "Lat33", "Jelgava", "At9020", null);

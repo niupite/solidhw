@@ -16,4 +16,11 @@ public class PersonAddressee extends Person implements Addressee {
         System.out.println("Sending package from " + pack.getSender().writePerson() + "to " + this.writePerson() + " ");
         System.out.println("Address line : " + pack.getAddress().writeAddress() + " ");
     }
+
+    @Override
+    public void send(Letter letter) {
+        System.out.println("Sending letter from " + letter.getSender().writePerson() + "to " + this.writePerson() + " ");
+        System.out.println("Address line : " + letter.getAddress().writeAddress() + " ");
+    }
+
 }
