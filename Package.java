@@ -1,16 +1,16 @@
 package io.codelex.solidexamples;
 
 public class Package {
-    private final Sender sender;
+    private final Person sender;
     private final Address address;
 
-    public Package(Sender sender,
+    public Package(Person sender,
                    Address address) {
         this.sender = sender;
         this.address = address;
     }
 
-    Sender getSender() {
+    Person getSender() {
         return sender;
     }
 

@@ -16,12 +16,12 @@ class PostalService {
                      String streetName,
                      Integer streetNumber) {
 
-        Addressee addressee = new Addressee(addresseeName, addresseeSurname, addresseeID);
-        Sender sender = new Sender(senderName, senderSurname, senderID);
+        Addressee addressee = new PersonAddressee(addresseeName, addresseeSurname, addresseeID);
+        Person sender = new Person(senderName, senderSurname, senderID);
 
         personValidator.validator(addressee);
         personValidator.validator(sender);
-        
+
         Address address = new Address(postalCode, country, city, streetName, streetNumber);
         addressValidator.validator(address);
 

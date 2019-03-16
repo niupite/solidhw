@@ -1,6 +1,6 @@
 package io.codelex.solidexamples;
 
-public abstract class Person {
+class Person {
     private final String name;
     private final String surname;
     private final String identificationNumber;
@@ -11,7 +11,6 @@ public abstract class Person {
         this.identificationNumber = identificationNumber;
     }
 
-    public abstract boolean isAddressee();
 
     String writePerson() {
         return this.name + " " + this.surname + " (" + this.identificationNumber + ") ";
